@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="f205ynVpeAQgpE4mlACHVVm3SIndNYLOTXzxhjhCC-I" />
+    <title>Respic TR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Respic TR</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" onclick="showSection('podcasts')">Podcastlerimiz</a></li>
+            <li><a href="#" onclick="showSection('aboutUs')">Biz Kimiz?</a></li>
+            <li><a href="#" onclick="showSection('about')">Hakkımızda</a></li>
+          <li><a href="#" onclick="showSection('allpodcasts')">Tüm Podcastler</a></li>
+        </ul>
+    </nav>
+
+  <div id="yell">
+    <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Arama yapın...">
+    </div>
+    
+
+    <section id="podcasts">
+        <h2>Podcastlerimiz</h2>
+        <div class="video-container">
+            <video id="videoPlayer" controls>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            
+        </div>
+        <div>
+          <span class="searchable">
+            <p>
+               Mystery at the Hub
+            </p> 
+            
+            <img src="https://tls.tc/VD5Ey" onclick="changeVideo('https://tls.tc/gaJza','https://tls.tc/VD5Ey')"/>
+          </span>
+           <span class="searchable">
+   <p >
+      Year of Tiger
+   </p> 
+             <img   src="https://tls.tc/LYhYd" onclick="changeVideo('https://tls.tc/PDu17','https://tls.tc/LYhYd')"/>
+    </span>
+        </div>
+    </section>
+
+    <section id="aboutUs" style="display: none;">
+        <h2>Biz Kimiz?</h2>
+        <div class="op">
+           <p>
+              Respic TR bir podcast platformudur. 
+           </p>
+        </div>
+    </section>
+
+    <section id="about" style="display: none;">
+        <h2>Hakkımızda</h2>
+        <div class="op">
+            <p>Haydi,Spotify'ı ez!</p>
+        </div>
+    </section>
+  <section id="allpodcasts" style="display: none;">
+        <h2>Tüm Podcastlerimiz</h2>
+        <div class="c">
+          <span class="searchable">
+            <p>
+               Mystery at the Hub
+            </p> 
+            
+            <img src="https://tls.tc/VD5Ey" onclick="changeVideo('https://tls.tc/gaJza','https://tls.tc/VD5Ey')"/>
+          </span>
+           <span class="searchable">
+   <p>
+      Year of Tiger
+   </p> 
+             <img   src="https://tls.tc/LYhYd" onclick="changeVideo('https://tls.tc/PDu17','https://tls.tc/LYhYd')"/>
+    </span>
+            </div>
+        
+  </section>
+  
+
+    <script src="script.js"></script>
+
+    <script>
+        function searchFunction() {
+            var input, filter, buttons, i, txtValue;
+            input = document.getElementById('searchInput');
+            filter = input.value.toUpperCase();
+            buttons = document.getElementsByClassName('searchable');
+
+            for (i = 0; i < buttons.length; i++) {
+                txtValue = buttons[i].textContent || buttons[i].innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    buttons[i].style.display = "";
+                } else {
+                    buttons[i].style.display = "none";
+                }
+            }
+        }
+      //hawli
+    </script>
+</body>
+</html>
+
